@@ -8,8 +8,11 @@
 
 /* brak points   desktop 990px */
 .tab-item {
-   --tabs-item-padding: 10px 10px;
-   --tabs-item-border-top: 3px;
+   --tab-item_width: 130px;
+   --tab-item_height: 47px;
+   --tab-item_padding: 10px 10px;
+   --tab-item_border-top: 3px;
+   --tab-item_margin-left: 1px;
 }
 
 .tab-blocks-container {
@@ -47,13 +50,14 @@ body {
 }
 
 .tab-item {
-   width: 130px;
-   height: 47px;
+   width: var(--tab-item_width);
+   height: var(--tab-item_height);
    border: none;
+   margin-left: var(--tab-item_margin-left);
    color: var(--blueNavy);
-   padding: var(--tabs-item-padding);
+   padding: var(--tab-item_padding);
    background-color: var(--mediumGray);
-   border-top: var(--tabs-item-border-top) solid var(--mediumGray);
+   border-top: var(--tab-item_border-top) solid var(--mediumGray);
 }
 
 .tab-item:focus {
@@ -66,7 +70,7 @@ body {
 
 .active-tab {
    background-color: var(--white);
-   border-top: var(--tabs-item-border-top) solid var(--greenBlue);
+   border-top: var(--tab-item_border-top) solid var(--greenBlue);
 }
 
 .tab-blocks-container {
