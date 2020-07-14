@@ -7,6 +7,7 @@
 }
 
 /* brak points   desktop 990px */
+/*------- Variables --------*/
 .tab-item {
    --tab-item_width: 130px;
    --tab-item_height: 47px;
@@ -30,6 +31,23 @@
    --tab-blocks-item-text_margin: 40px 0;
 }
 
+.add-tab-btn {
+   --add-tab-btn_right: 0;
+   --add-tab-btn_top: 0;
+   --add-tab-btn_width: 30px;
+   --add-tab-btn_height: 30px;
+   --add-tab-btn_z-index: 1;
+   --add-tab-btn_border-radius: 20px;
+   --add-tab-btn_transition-time: 0.25s;
+   --add-tab-btn-item_width: 15px;
+   --add-tab-btn-item_height: 3px;
+   --add-tab-btn-item_top: 50%;
+   --add-tab-btn-item_left: 50%;
+   --add-tab-btn-item_translate: -50%;
+   --add-tab-btn-item_rotate-after: -90deg;
+   /* --add-tab-btn-item_: 3px; */
+}
+
 body {
    margin: 0;
    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -41,6 +59,7 @@ body {
    height: 100vh;
 }
 
+/*------- Elements Classes --------*/
 .tab-component {
    position: relative;
    height: auto;
@@ -107,4 +126,53 @@ body {
 .active-tab-block {
    display: block;
    background-color: var(--white);
+}
+
+.add-tab-btn {
+   position: absolute;
+   background-color: var(--greenBlue);
+   right: var(--add-tab-btn_right);
+   top: var(--add-tab-btn_top);
+   width: var(--add-tab-btn_width);
+   height: var(--add-tab-btn_height);
+   z-index: var(--add-tab-btn_z-index);
+   border-radius: var(--add-tab-btn_border-radius);
+   transition: all var(--add-tab-btn_transition-time) ease-in-out;
+   -o-transition: all var(--add-tab-btn_transition-time) ease-in-out;
+   -webkit-transition: all var(--add-tab-btn_transition-time) ease-in-out;
+   -moz-transition: all var(--add-tab-btn_transition-time) ease-in-out;
+}
+
+.add-tab-btn-item {
+   width: var(--add-tab-btn-item_width);
+   height: var(--add-tab-btn-item_height);
+   position: absolute;
+   background-color: var(--white);
+   transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   -o-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   -webkit-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   -moz-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   top: var(--add-tab-btn-item_top);
+   left: var(--add-tab-btn-item_left);
+   transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+   -o-transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+   -webkit-transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+   -moz-transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+}
+
+.add-tab-btn-item::after {
+   content: "";
+   position: absolute;
+   width: var(--add-tab-btn-item_width);
+   height: var(--add-tab-btn-item_height);
+   background-color: var(--white);
+   transform: rotate(var(--add-tab-btn-item_rotate-after));
+   -o-transform: rotate(var(--add-tab-btn-item_rotate-after));
+   -webkit-transform: rotate(var(--add-tab-btn-item_rotate-after));
+   -moz-transform: rotate(var(--add-tab-btn-item_rotate-after));
+}
+
+.add-tab-btn:hover {
+   cursor: pointer;
+   background-color: var(--mediumGray);
 }
