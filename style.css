@@ -104,7 +104,7 @@ body {
    margin: var(--tab-blocks-item-text_margin);
 }
 
-.active--tab-block {
+.active-tab-block {
    display: block;
    background-color: var(--white);
 }
