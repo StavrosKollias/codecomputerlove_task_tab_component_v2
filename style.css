@@ -16,8 +16,14 @@
    --tab-item_margin-left: 1px;
 }
 
+.tab-component {
+   --tab-component_width: 90%;
+   --tab-component_max-width: 994px;
+}
+
 .tab-blocks-container {
    --tab-blocks-container_width: 100%;
+   --tab-blocks-container_max-width: 994px;
 }
 
 .tab-blocks-item {
@@ -25,7 +31,7 @@
    --tab-blocks-item_height: auto;
    --tab-blocks-item_min-height: 273px;
    --tab-blocks-item_max-width: 994px;
-   --tab-blocks-item_width: -100%;
+   --tab-blocks-item_width: 100%;
    --tab-blocks-item-title_font: 22px;
    --tab-blocks-item-text_font: 16px;
    --tab-blocks-item-text_margin: 40px 0;
@@ -63,7 +69,8 @@ body {
 .tab-component {
    position: relative;
    height: auto;
-   width: 90%;
+   width: var(--tab-component_width);
+   max-width: var(--tab-component_max-width);
 }
 
 .tabs-container {
@@ -100,13 +107,14 @@ body {
 .tab-blocks-container {
    position: relative;
    height: auto;
+   max-width: var(--tab-blocks-container_max-width);
    width: var(--tab-blocks-container_width);
 }
 
 .tab-blocks-item {
    position: absolute;
-   width: calc(var(--tab-blocks-item_width)+var(--tab-blocks-item_padding)) !important;
-   max-width: calc(var(--tab-blocks-item_max-width)+var(--tab-blocks-item_padding));
+   width: calc(var(--tab-blocks-item_width) - 2 * var(--tab-blocks-item_padding));
+   max-width: calc(var(--tab-blocks-item_max-width) - 2 * var(--tab-blocks-item_padding));
    padding: var(--tab-blocks-item_padding);
    height: var(--tab-blocks-item_height);
    min-height: var(--tab-blocks-item_min-height);
