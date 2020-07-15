@@ -4,9 +4,9 @@
    --blueNavy: #30309e;
    --lightGray: #e9e6e6;
    --mediumGray: #cccaca;
+   --green: #2c862c;
 }
 
-/* brak points   desktop 990px */
 /*------- Variables --------*/
 .tab-item {
    --tab-item_width: 130px;
@@ -52,6 +52,36 @@
    --add-tab-btn-item_translate: -50%;
    --add-tab-btn-item_rotate-after: -90deg;
    /* --add-tab-btn-item_: 3px; */
+}
+
+.edit-tab-btn {
+   --edit-tab-btn_right: 0;
+   --edit-tab-btn_top: 35px;
+   --edit-tab-btn_width: 30px;
+   --edit-tab-btn_height: 30px;
+   --edit-tab-btn_z-index: 2;
+   --edit-tab-btn_border-radius: 20px;
+   --edit-tab-btn_transition-time: 0.25s;
+   --edit-tab-btn-item_width: 15px;
+   --edit-tab-btn-item_height: 3px;
+   --edit-tab-btn-item_top: 50%;
+   --edit-tab-btn-item_left: 50%;
+   --edit-tab-btn-item_translate: -50%;
+}
+
+.save-tab-btn {
+   --save-tab-btn_right: 0;
+   --save-tab-btn_top: 75px;
+   --save-tab-btn_width: 30px;
+   --save-tab-btn_height: 30px;
+   --save-tab-btn_z-index: 2;
+   --save-tab-btn_border-radius: 20px;
+   --save-tab-btn_transition-time: 0.25s;
+   --save-tab-btn-item_width: 15px;
+   --save-tab-btn-item_height: 3px;
+   --save-tab-btn-item_top: 50%;
+   --save-tab-btn-item_left: 50%;
+   --save-tab-btn-item_translate: -50%;
 }
 
 body {
@@ -180,6 +210,68 @@ body {
    -moz-transform: rotate(var(--add-tab-btn-item_rotate-after));
 }
 
+.edit-tab-btn {
+   position: absolute;
+   background-color: var(--blueNavy);
+   right: var(--edit-tab-btn_right);
+   top: var(--edit-tab-btn_top);
+   width: var(--edit-tab-btn_width);
+   height: var(--edit-tab-btn_height);
+   z-index: var(--edit-tab-btn_z-index);
+   border-radius: var(--edit-tab-btn_border-radius);
+   transition: all var(--edit-tab-btn_transition-time) ease-in-out;
+   -o-transition: all var(--edit-tab-btn_transition-time) ease-in-out;
+   -webkit-transition: all var(--edit-tab-btn_transition-time) ease-in-out;
+   -moz-transition: all var(--edit-tab-btn_transition-time) ease-in-out;
+}
+
+.edit-tab-btn-item {
+   color: var(--white);
+   position: absolute;
+   transform-origin: var(--edit-tab-btn-item_left) var(--edit-tab-btn-item_top);
+   -o-transform-origin: var(--edit-tab-btn-item_left) var(--edit-tab-btn-item_top);
+   -webkit-transform-origin: var(--edit-tab-btn-item_left) var(--edit-tab-btn-item_top);
+   -moz-transform-origin: var(--edit-tab-btn-item_left) var(--edit-tab-btn-item_top);
+   top: var(--edit-tab-btn-item_top);
+   left: var(--edit-tab-btn-item_left);
+   transform: translate(var(--edit-tab-btn-item_translate), var(--edit-tab-btn-item_translate));
+   -o-transform: translate(var(--edit-tab-btn-item_translate), var(--edit-tab-btn-item_translate));
+   -webkit-transform: translate(var(--edit-tab-btn-item_translate), var(--edit-tab-btn-item_translate));
+   -moz-transform: translate(var(--edit-tab-btn-item_translate), var(--edit-tab-btn-item_translate));
+}
+
+.save-tab-btn {
+   position: absolute;
+   background-color: var(--green);
+   right: var(--save-tab-btn_right);
+   top: var(--save-tab-btn_top);
+   width: var(--save-tab-btn_width);
+   height: var(--save-tab-btn_height);
+   z-index: var(--save-tab-btn_z-index);
+   border-radius: var(--save-tab-btn_border-radius);
+   transition: all var(--save-tab-btn_transition-time) ease-in-out;
+   -o-transition: all var(--save-tab-btn_transition-time) ease-in-out;
+   -webkit-transition: all var(--save-tab-btn_transition-time) ease-in-out;
+   -moz-transition: all var(--save-tab-btn_transition-time) ease-in-out;
+}
+
+.save-tab-btn-item {
+   color: var(--white);
+   position: absolute;
+   transform-origin: var(--save-tab-btn-item_left) var(--save-tab-btn-item_top);
+   -o-transform-origin: var(--save-tab-btn-item_left) var(--save-tab-btn-item_top);
+   -webkit-transform-origin: var(--save-tab-btn-item_left) var(--save-tab-btn-item_top);
+   -moz-transform-origin: var(--save-tab-btn-item_left) var(--save-tab-btn-item_top);
+   top: var(--save-tab-btn-item_top);
+   left: var(--save-tab-btn-item_left);
+   transform: translate(var(--save-tab-btn-item_translate), var(--save-tab-btn-item_translate));
+   -o-transform: translate(var(--save-tab-btn-item_translate), var(--save-tab-btn-item_translate));
+   -webkit-transform: translate(var(--save-tab-btn-item_translate), var(--save-tab-btn-item_translate));
+   -moz-transform: translate(var(--save-tab-btn-item_translate), var(--save-tab-btn-item_translate));
+}
+
+.save-tab-btn:hover,
+.edit-tab-btn:hover,
 .add-tab-btn:hover {
    cursor: pointer;
    background-color: var(--mediumGray);

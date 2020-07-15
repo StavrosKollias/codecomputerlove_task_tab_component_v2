@@ -1,8 +1,6 @@
-function idNumber(id, i) {
-   return id.split("-")[i];
-}
+// ----Click handlers---
 
-function handleClicktab(element) {
+function handleClickTab(element) {
    const tabItems = getDomElements(".tab-item");
    const tabBlocks = getDomElements(".tab-blocks-item");
    const tabSelected = idNumber(element.id, 1);
@@ -16,21 +14,43 @@ function handleClicktab(element) {
 
 function addNewTab() {
    const tabItems = getDomElements(".tab-item");
-   const newItemEnum = tabItems.length + 1;
-   var tabContainer = document.getElementById("tabs-container");
-   const tabBlocksContainer = document.getElementById("tab-blocks-container");
-   var blockDiv = createTabblock();
-   console.log(blockDiv);
-   tabBlocksContainer.appendChild(blockDiv);
-   addAttributeElement(blockDiv, "class", "tab-blocks-item");
-   addAttributeElement(blockDiv, "id", `tab-block-${newItemEnum}`);
-   const tab = createTabButton();
-   tabContainer.appendChild(tab);
-   addAttributeElement(tab, "class", `tab-item`);
-   addAttributeElement(tab, "id", `tab-${newItemEnum}`);
-   addEventListenerNewTab(tab);
-   handleClicktab(tab);
+   const newTab = checkFiveMaximumLimit(tabItems);
+   if (newTab) {
+      const newItemEnum = tabItems.length + 1;
+      var tabContainer = document.getElementById("tabs-container");
+      const tabBlocksContainer = document.getElementById("tab-blocks-container");
+      var blockDiv = createTabblock();
+      console.log(blockDiv);
+      tabBlocksContainer.appendChild(blockDiv);
+      addAttributeElement(blockDiv, "class", "tab-blocks-item");
+      addAttributeElement(blockDiv, "id", `tab-block-${newItemEnum}`);
+      const tab = createTabButton();
+      tabContainer.appendChild(tab);
+      addAttributeElement(tab, "class", `tab-item`);
+      addAttributeElement(tab, "id", `tab-${newItemEnum}`);
+      addEventListenerNewTab(tab);
+      handleClickTab(tab);
+   }
 }
+
+function editActiveTab() {
+   const activeTab = getDomElements(".active-tab");
+   const activeBlock = getDomElements(".active-tab-block");
+   activeBlock[0].children[0].setAttribute("contenteditable", "true");
+   activeBlock[0].children[1].children[0].setAttribute("contenteditable", "true");
+   activeBlock[0].children[1].children[1].setAttribute("contenteditable", "true");
+   activeTab[0].setAttribute("contenteditable", "true");
+}
+
+function saveEditsActiveTab() {
+   const activeTab = getDomElements(".active-tab");
+   const activeBlock = getDomElements(".active-tab-block");
+   activeBlock[0].children[0].setAttribute("contenteditable", "false");
+   activeBlock[0].children[1].children[0].setAttribute("contenteditable", "false");
+   activeBlock[0].children[1].children[1].setAttribute("contenteditable", "false");
+   activeTab[0].setAttribute("contenteditable", "false");
+}
+//---- Functions----- /
 
 function createTabblock() {
    console.log("create Tab Block");
@@ -82,13 +102,16 @@ function createTabButton() {
    tab.appendChild(btnTxt);
    return tab;
 }
+
 function addEventListenerNewTab(tab) {
    tab.addEventListener("click", (e) => {
-      handleClicktab(e.target);
+      handleClickTab(e.target);
    });
 }
 
-//---- Functions-- /
+function checkFiveMaximumLimit(list) {
+   return list.length + 1 <= 5;
+}
 function getDomElements(type) {
    var elements = document.querySelectorAll(type);
    return elements;
@@ -96,4 +119,8 @@ function getDomElements(type) {
 
 function addAttributeElement(element, type, string) {
    element.setAttribute(type, string);
+}
+
+function idNumber(id, i) {
+   return id.split("-")[i];
 }

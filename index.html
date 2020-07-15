@@ -4,20 +4,31 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       <title>Tab Challenge</title>
       <link rel="stylesheet" href="style.css" />
    </head>
    <body>
       <div class="tab-component">
          <div class="tabs-container" id="tabs-container">
-            <button class="tab-item active-tab" id="tab-1" onclick="handleClicktab(this);">Lorem Ipsum</button>
-            <button class="tab-item" id="tab-2" onclick="handleClicktab(this);">Viverra met</button>
-            <button class="tab-item" id="tab-3" onclick="handleClicktab(this);">Pellentesque</button>
+            <button class="tab-item active-tab" id="tab-1" onclick="handleClickTab(this);">Lorem Ipsum</button>
+            <button class="tab-item" id="tab-2" onclick="handleClickTab(this);">Viverra met</button>
+            <button class="tab-item" id="tab-3" onclick="handleClickTab(this);">Pellentesque</button>
          </div>
 
          <div class="tab-blocks-container" id="tab-blocks-container">
             <div class="add-tab-btn" onclick="addNewTab()">
                <div class="add-tab-btn-item"></div>
+            </div>
+
+            <div class="edit-tab-btn" onclick="editActiveTab()">
+               <!-- <div class="edit-tab-btn-item"></div> -->
+               <i class="fa fa-pencil edit-tab-btn-item"></i>
+            </div>
+
+            <div class="save-tab-btn" onclick="saveEditsActiveTab()">
+               <!-- <div class="edit-tab-btn-item"></div> -->
+               <i class="fa fa-floppy-o save-tab-btn-item"></i>
             </div>
             <div class="tab-blocks-item active-tab-block" id="tab-block-1">
                <h2 class="tab-blocks-item_title">Title 1</h2>
