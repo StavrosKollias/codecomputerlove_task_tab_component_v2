@@ -139,6 +139,7 @@ body {
 
 .tab-blocks-item {
   position: absolute;
+  display: none;
   width: calc(
     var(--tab-blocks-item_width) - 2 * var(--tab-blocks-item_padding)
   );
@@ -148,7 +149,7 @@ body {
   padding: var(--tab-blocks-item_padding);
   height: var(--tab-blocks-item_height);
   min-height: var(--tab-blocks-item_min-height);
-  display: none;
+  background-color: var(--white);
 }
 
 .tab-blocks-item_title {
@@ -165,7 +166,7 @@ body {
 
 .active-tab-block {
   display: block;
-  background-color: var(--white);
+  position: unset;
 }
 
 .tab-settings-tab {
