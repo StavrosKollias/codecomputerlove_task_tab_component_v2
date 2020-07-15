@@ -101,7 +101,7 @@ function createTextPar() {
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque omnis perferendis tempore nulla molestiae totam veritatis possimus aliquid provident rem neque optio dolorum, fugiat esse minima, asperiores quas quia facilis."
   );
   blockTxtPar.appendChild(parTxt);
-  addAttributeElement(blockTxtPar, "class", "tab-blocks-text_item");
+  addAttributeElement(blockTxtPar, "class", "tab-blocks_text-item");
   return blockTxtPar;
 }
 
