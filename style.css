@@ -40,7 +40,7 @@
 .tab-settings-tab {
   --tab-settings-tab_right: 0;
   --tab-settings-tab_top: 0;
-  --tab-settings-tab_height: 150px;
+  --tab-settings-tab_height: auto;
   --tab-settings-tab_width: 50px;
   --tab-settings-tab_z-index: 2;
 }
