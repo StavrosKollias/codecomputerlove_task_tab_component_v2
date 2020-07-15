@@ -119,6 +119,8 @@ body {
    padding: var(--tab-item_padding);
    background-color: var(--mediumGray);
    border-top: var(--tab-item_border-top) solid var(--mediumGray);
+   text-overflow: ellipsis;
+   overflow: hidden;
 }
 
 .tab-item:focus {
@@ -154,11 +156,13 @@ body {
 .tab-blocks-item_title {
    font-size: var(--tab-blocks-item-title_font);
    color: var(--blueNavy);
+   word-break: break-all;
 }
 .tab-blocks-text_item {
    font-size: var(--tab-blocks-item-text_font);
    color: var(--blueNavy);
    margin: var(--tab-blocks-item-text_margin);
+   word-break: break-all;
 }
 
 .active-tab-block {
