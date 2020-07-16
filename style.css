@@ -117,6 +117,10 @@ body {
   overflow: hidden;
 }
 
+.tab-item:nth-of-type(1) {
+  margin-left: calc(var(--tab-item_margin-left)- var(--tab-item_margin-left));
+}
+
 .tab-item:focus {
   outline: none;
 }
