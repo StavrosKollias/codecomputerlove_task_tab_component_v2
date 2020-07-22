@@ -214,6 +214,10 @@ textarea:focus {
    -moz-transition: all var(--tab-setting-item_transition-time) ease-in-out;
 }
 
+.tab-setting-item:focus {
+   outline: none;
+}
+
 .setting-item {
    color: var(--white);
    position: absolute;
