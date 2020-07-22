@@ -1,282 +1,287 @@
 :root {
-  --white: #ffffff;
-  --greenBlue: #0a746b;
-  --blueNavy: #30309e;
-  --lightGray: #e9e6e6;
-  --mediumGray: #cccaca;
-  --green: #2c862c;
+   --white: #ffffff;
+   --greenBlue: #0a746b;
+   --blueNavy: #30309e;
+   --lightGray: #e9e6e6;
+   --mediumGray: #cccaca;
+   --green: #2c862c;
+   --black: #000000;
+   --red: #a33e3e;
 }
 
 /*------- Variables --------*/
 .tab-item {
-  --tab-item_width: 130px;
-  --tab-item_height: 47px;
-  --tab-item_padding: 10px 10px;
-  --tab-item_border-top: 3px;
-  --tab-item_margin-left: 1px;
+   --tab-item_width: 160px;
+   --tab-item_height: 58px;
+   --tab-item_padding: 10px 10px;
+   --tab-item_border-top: 3px;
+   --tab-item_margin-right: 1px;
 }
 
 .tab-component {
-  --tab-component_width: 90%;
-  --tab-component_max-width: 994px;
+   --tab-component_width: 90%;
+   --tab-component_max-width: 994px;
 }
 
 .tab-blocks-container {
-  --tab-blocks-container_width: 100%;
-  --tab-blocks-container_max-width: 994px;
+   --tab-blocks-container_width: 100%;
+   --tab-blocks-container_max-width: 994px;
 }
 
 .tab-blocks-item {
-  --tab-blocks-item_padding: 40px;
-  --tab-blocks-item_height: auto;
-  --tab-blocks-item_min-height: 273px;
-  --tab-blocks-item_max-width: 994px;
-  --tab-blocks-item_width: 100%;
-  --tab-blocks-item-title_font: 22px;
-  --tab-blocks-item-text_font: 16px;
-  --tab-blocks-item-text_margin: 40px 0;
+   --tab-blocks-item_padding: 40px;
+   --tab-blocks-item_height: auto;
+   --tab-blocks-item_min-height: 273px;
+   --tab-blocks-item_max-width: 994px;
+   --tab-blocks-item_width: 100%;
+   --tab-blocks-item-title_font: 22px;
+   --tab-blocks-item-text_font: 16px;
+   --tab-blocks-item-text_min-height: 134px;
 }
 
 .tab-settings-tab {
-  --tab-settings-tab_right: 0;
-  --tab-settings-tab_top: 0;
-  --tab-settings-tab_height: auto;
-  --tab-settings-tab_width: 50px;
-  --tab-settings-tab_z-index: 2;
+   --tab-settings-tab_right: 0;
+   --tab-settings-tab_top: 0;
+   --tab-settings-tab_height: auto;
+   --tab-settings-tab_width: 50px;
+   --tab-settings-tab_z-index: 2;
 }
 
 .tab-setting-item {
-  --tab-setting-item_right: 0;
-  --tab-setting-item_top: 0;
-  --tab-setting-item_width: 30px;
-  --tab-setting-item_height: 30px;
-  --tab-setting-item_margin: 2px auto;
-  --tab-setting-item_z-index: 1;
-  --tab-setting-item_border-radius: 20px;
-  --tab-setting-item_transition-time: 0.25s;
-  --tab-setting-item-item_width: 15px;
-  --tab-setting-item-item_height: 3px;
-  --tab-setting-item-item_top: 50%;
-  --tab-setting-item-item_left: 50%;
-  --tab-setting-item-item_translate: -50%;
-  --tab-setting-item-item_rotate-after: -90deg;
+   --tab-setting-item_right: 0;
+   --tab-setting-item_top: 0;
+   --tab-setting-item_width: 30px;
+   --tab-setting-item_height: 30px;
+   --tab-setting-item_margin: 2px auto;
+   --tab-setting-item_z-index: 1;
+   --tab-setting-item_border-radius: 20px;
+   --tab-setting-item_transition-time: 0.25s;
+   --tab-setting-item-item_width: 15px;
+   --tab-setting-item-item_height: 3px;
+   --tab-setting-item-item_top: 50%;
+   --tab-setting-item-item_left: 50%;
+   --tab-setting-item-item_translate: -50%;
+   --tab-setting-item-item_rotate-after: -90deg;
 }
 
 .setting-item {
-  --setting-item_width: 15px;
-  --setting-item_height: 3px;
-  --setting-item_top: 50%;
-  --setting-item_left: 50%;
-  --setting-item_translate: -50%;
+   --setting-item_width: 15px;
+   --setting-item_height: 3px;
+   --setting-item_top: 50%;
+   --setting-item_left: 50%;
+   --setting-item_translate: -50%;
 }
+
 .add-tab-btn {
-  --add-tab-btn-item_width: 15px;
-  --add-tab-btn-item_height: 3px;
-  --add-tab-btn-item_top: 50%;
-  --add-tab-btn-item_left: 50%;
-  --add-tab-btn-item_translate: -50%;
-  --add-tab-btn-item_rotate-after: -90deg;
+   --add-tab-btn-item_width: 12px;
+   --add-tab-btn-item_height: 3px;
+   --add-tab-btn-item_top: 50%;
+   --add-tab-btn-item_left: 50%;
+   --add-tab-btn-item_translate: -50%;
+   --add-tab-btn-item_rotate-after: -90deg;
 }
 
 body {
-  margin: 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: var(--lightGray);
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  height: 100vh;
+   margin: 0;
+   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+   background-color: var(--lightGray);
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   height: 100vh;
+}
+
+button:focus,
+textarea:focus {
+   outline: none;
 }
 
 /*------- Element Classes --------*/
 .tab-component {
-  position: relative;
-  height: auto;
-  width: var(--tab-component_width);
-  max-width: var(--tab-component_max-width);
+   position: relative;
+   height: auto;
+   width: var(--tab-component_width);
+   max-width: var(--tab-component_max-width);
 }
 
 .tabs-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-self: start;
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-self: start;
+   overflow-x: auto;
+}
+
+.tabs-container-overflow::after {
+   content: "";
+   position: absolute;
+   width: 30px;
+   height: 100%;
+   right: var(--position-right-fade);
+   z-index: 1;
+   box-shadow: inset -38px 0 25px -30px var(--white);
 }
 
 .tab-item {
-  width: var(--tab-item_width);
-  height: var(--tab-item_height);
-  border: none;
-  margin-left: var(--tab-item_margin-left);
-  color: var(--blueNavy);
-  padding: var(--tab-item_padding);
-  background-color: var(--mediumGray);
-  border-top: var(--tab-item_border-top) solid var(--mediumGray);
-  text-overflow: ellipsis;
-  overflow: hidden;
+   width: var(--tab-item_width);
+   min-width: var(--tab-item_width);
+   height: var(--tab-item_height);
+   border: none;
+   margin-right: var(--tab-item_margin-right);
+   color: var(--blueNavy);
+   padding: var(--tab-item_padding);
+   background-color: var(--mediumGray);
+   border-top: var(--tab-item_border-top) solid var(--mediumGray);
+   text-overflow: ellipsis;
+   overflow: hidden;
 }
 
-.tab-item:nth-of-type(1) {
-  margin-left: calc(var(--tab-item_margin-left)- var(--tab-item_margin-left));
-}
-
-.tab-item:focus {
-  outline: none;
+.tab-item span {
+   padding: var(--tab-item_padding);
 }
 
 .tab-item:hover {
-  cursor: pointer;
+   cursor: pointer;
 }
 
 .active-tab {
-  background-color: var(--white);
-  border-top: var(--tab-item_border-top) solid var(--greenBlue);
+   background-color: var(--white);
+   border-top: var(--tab-item_border-top) solid var(--greenBlue);
 }
 
 .tab-blocks-container {
-  position: relative;
-  height: auto;
-  max-width: var(--tab-blocks-container_max-width);
-  width: var(--tab-blocks-container_width);
+   position: relative;
+   height: auto;
+   max-width: var(--tab-blocks-container_max-width);
+   width: var(--tab-blocks-container_width);
 }
 
 .tab-blocks-item {
-  position: absolute;
-  display: none;
-  width: calc(
-    var(--tab-blocks-item_width) - 2 * var(--tab-blocks-item_padding)
-  );
-  max-width: calc(
-    var(--tab-blocks-item_max-width) - 2 * var(--tab-blocks-item_padding)
-  );
-  padding: var(--tab-blocks-item_padding);
-  height: var(--tab-blocks-item_height);
-  min-height: var(--tab-blocks-item_min-height);
-  background-color: var(--white);
+   position: absolute;
+   display: none;
+   width: calc(var(--tab-blocks-item_width) - 2 * var(--tab-blocks-item_padding));
+   max-width: calc(var(--tab-blocks-item_max-width) - 2 * var(--tab-blocks-item_padding));
+   padding: var(--tab-blocks-item_padding);
+   height: var(--tab-blocks-item_height);
+   min-height: var(--tab-blocks-item_min-height);
+   background-color: var(--white);
 }
 
 .tab-blocks-item_title {
-  font-size: var(--tab-blocks-item-title_font);
-  color: var(--blueNavy);
-  word-break: break-all;
+   font-size: var(--tab-blocks-item-title_font);
+   color: var(--blueNavy);
+   word-break: break-all;
 }
-.tab-blocks_text-item {
-  font-size: var(--tab-blocks-item-text_font);
-  color: var(--blueNavy);
-  margin: var(--tab-blocks-item-text_margin);
-  word-break: break-all;
+
+.tab-blocks-item_text {
+   width: 100%;
+   border: none;
+   resize: none;
+   height: auto;
+   font-size: var(--tab-blocks-item-text_font);
+   color: var(--blueNavy);
+   min-height: var(--tab-blocks-item-text_min-height);
 }
 
 .active-tab-block {
-  display: block;
-  position: unset;
+   display: block;
+   position: unset;
 }
 
 .tab-settings-tab {
-  position: absolute;
-  right: var(--tab-settings-tab_right);
-  top: var(--tab-settings-tab_top);
-  width: var(--tab-settings-tab_width);
-  height: var(--tab-settings-tab_height);
-  z-index: var(--tab-settings-tab_z-index);
+   position: absolute;
+   right: var(--tab-settings-tab_right);
+   top: var(--tab-settings-tab_top);
+   width: var(--tab-settings-tab_width);
+   height: var(--tab-settings-tab_height);
+   z-index: var(--tab-settings-tab_z-index);
 }
 
 .tab-setting-item {
-  position: relative;
-  display: block;
-  margin: var(--tab-setting-item_margin);
-  width: var(--tab-setting-item_width);
-  height: var(--tab-setting-item_height);
-  border-radius: var(--tab-setting-item_border-radius);
-  transition: all var(--tab-setting-item_transition-time) ease-in-out;
-  -o-transition: all var(--tab-setting-item_transition-time) ease-in-out;
-  -webkit-transition: all var(--tab-setting-item_transition-time) ease-in-out;
-  -moz-transition: all var(--tab-setting-item_transition-time) ease-in-out;
+   border: none;
+   position: relative;
+   display: block;
+   margin: var(--tab-setting-item_margin);
+   width: var(--tab-setting-item_width);
+   height: var(--tab-setting-item_height);
+   border-radius: var(--tab-setting-item_border-radius);
+   transition: all var(--tab-setting-item_transition-time) ease-in-out;
+   -o-transition: all var(--tab-setting-item_transition-time) ease-in-out;
+   -webkit-transition: all var(--tab-setting-item_transition-time) ease-in-out;
+   -moz-transition: all var(--tab-setting-item_transition-time) ease-in-out;
 }
 
 .setting-item {
-  color: var(--white);
-  position: absolute;
-  transform-origin: var(--setting-item_left) var(--setting-item_top);
-  -o-transform-origin: var(--setting-item_left) var(--setting-item_top);
-  -webkit-transform-origin: var(--setting-item_left) var(--setting-item_top);
-  -moz-transform-origin: var(--setting-item_left) var(--setting-item_top);
-  top: var(--setting-item_top);
-  left: var(--setting-item_left);
-  transform: translate(
-    var(--setting-item_translate),
-    var(--setting-item_translate)
-  );
-  -o-transform: translate(
-    var(--setting-item_translate),
-    var(--setting-item_translate)
-  );
-  -webkit-transform: translate(
-    var(--setting-item_translate),
-    var(--setting-item_translate)
-  );
-  -moz-transform: translate(
-    var(--setting-item_translate),
-    var(--setting-item_translate)
-  );
+   color: var(--white);
+   position: absolute;
+   transform-origin: var(--setting-item_left) var(--setting-item_top);
+   -o-transform-origin: var(--setting-item_left) var(--setting-item_top);
+   -webkit-transform-origin: var(--setting-item_left) var(--setting-item_top);
+   -moz-transform-origin: var(--setting-item_left) var(--setting-item_top);
+   top: var(--setting-item_top);
+   left: var(--setting-item_left);
+   transform: translate(var(--setting-item_translate), var(--setting-item_translate));
+   -o-transform: translate(var(--setting-item_translate), var(--setting-item_translate));
+   -webkit-transform: translate(var(--setting-item_translate), var(--setting-item_translate));
+   -moz-transform: translate(var(--setting-item_translate), var(--setting-item_translate));
 }
 
 .edit-tab-btn {
-  background-color: var(--blueNavy);
+   background-color: var(--blueNavy);
 }
 
 .save-tab-btn {
-  background-color: var(--green);
+   background-color: var(--green);
 }
 
 .add-tab-btn {
-  background-color: var(--greenBlue);
+   background-color: var(--greenBlue);
 }
+
+.delete-tab-btn {
+   background-color: var(--red);
+}
+
 .add-tab-btn-item {
-  width: var(--add-tab-btn-item_width);
-  height: var(--add-tab-btn-item_height);
-  position: absolute;
-  background-color: var(--white);
-  transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
-  -o-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
-  -webkit-transform-origin: var(--add-tab-btn-item_left)
-    var(--add-tab-btn-item_top);
-  -moz-transform-origin: var(--add-tab-btn-item_left)
-    var(--add-tab-btn-item_top);
-  top: var(--add-tab-btn-item_top);
-  left: var(--add-tab-btn-item_left);
-  transform: translate(
-    var(--add-tab-btn-item_translate),
-    var(--add-tab-btn-item_translate)
-  );
-  -o-transform: translate(
-    var(--add-tab-btn-item_translate),
-    var(--add-tab-btn-item_translate)
-  );
-  -webkit-transform: translate(
-    var(--add-tab-btn-item_translate),
-    var(--add-tab-btn-item_translate)
-  );
-  -moz-transform: translate(
-    var(--add-tab-btn-item_translate),
-    var(--add-tab-btn-item_translate)
-  );
+   width: var(--add-tab-btn-item_width);
+   height: var(--add-tab-btn-item_height);
+   position: absolute;
+   background-color: var(--white);
+   transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   -o-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   -webkit-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   -moz-transform-origin: var(--add-tab-btn-item_left) var(--add-tab-btn-item_top);
+   top: var(--add-tab-btn-item_top);
+   left: var(--add-tab-btn-item_left);
+   transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+   -o-transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+   -webkit-transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
+   -moz-transform: translate(var(--add-tab-btn-item_translate), var(--add-tab-btn-item_translate));
 }
+
 .add-tab-btn-item::after {
-  content: "";
-  position: absolute;
-  width: var(--add-tab-btn-item_width);
-  height: var(--add-tab-btn-item_height);
-  background-color: var(--white);
-  transform: rotate(var(--add-tab-btn-item_rotate-after));
-  -o-transform: rotate(var(--add-tab-btn-item_rotate-after));
-  -webkit-transform: rotate(var(--add-tab-btn-item_rotate-after));
-  -moz-transform: rotate(var(--add-tab-btn-item_rotate-after));
+   content: "";
+   position: absolute;
+   left: 0;
+   width: var(--add-tab-btn-item_width);
+   height: var(--add-tab-btn-item_height);
+   background-color: var(--white);
+   transform: rotate(var(--add-tab-btn-item_rotate-after));
+   -o-transform: rotate(var(--add-tab-btn-item_rotate-after));
+   -webkit-transform: rotate(var(--add-tab-btn-item_rotate-after));
+   -moz-transform: rotate(var(--add-tab-btn-item_rotate-after));
 }
+
+.delete-tab-btn:hover,
 .save-tab-btn:hover,
 .edit-tab-btn:hover,
 .add-tab-btn:hover {
-  cursor: pointer;
-  background-color: var(--mediumGray);
+   cursor: pointer;
+   box-shadow: 0 0 3px var(--black);
+}
+
+.disabled-setting-item {
+   background-color: var(--lightGray);
+   pointer-events: none;
 }

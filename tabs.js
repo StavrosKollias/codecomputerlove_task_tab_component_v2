@@ -1,138 +1,213 @@
+window.addEventListener("resize", () => {
+   const textAreaActive = document.querySelector(".active-tab-block").children[1];
+   handleTextAreaHeight(textAreaActive);
+   const containers = getContainersTabElements();
+   checkTabsContainerOverflow(containers.tabs);
+});
+
+window.addEventListener("load", () => {
+   const textAreaActive = document.querySelector(".active-tab-block").children[1];
+   handleTextAreaHeight(textAreaActive);
+   const containers = getContainersTabElements();
+   checkTabsContainerOverflow(containers.tabs);
+});
+
 // ----Click handlers---
+function handleTextAreaHeight(element) {
+   element.style.height = "";
+   element.style.height = element.scrollHeight + "px";
+}
 
 function handleClickTab(element) {
-  const tabItems = getDomElements(".tab-item");
-  const tabBlocks = getDomElements(".tab-blocks-item");
-  const tabSelected = idNumber(element.id, 1);
-  tabItems.forEach((e, i) => {
-    e.id != element.id ? e.classList.remove("active-tab") : false;
-    var blockIdNumber = idNumber(tabBlocks[i].id, 2);
-    blockIdNumber == tabSelected
-      ? tabBlocks[i].classList.add("active-tab-block")
-      : tabBlocks[i].classList.remove("active-tab-block");
-  });
-  element.classList.add("active-tab");
+   const activeElements = getActiveTabElements();
+   const idIndex = extractIdIndex(element.id, 1);
+   const block = document.getElementById(`tab-block-${idIndex}`);
+   removeClassFromElement(activeElements.tab, "active-tab");
+   removeClassFromElement(activeElements.block, "active-tab-block");
+   addClassToElement(element, "active-tab");
+   addClassToElement(block, "active-tab-block");
+   handleTextAreaHeight(block.children[1]);
+   scrollSmoothIntoViewelement(element);
 }
 
 function addNewTab() {
-  const tabItems = getDomElements(".tab-item");
-  const newTab = checkFiveMaximumLimit(tabItems);
-  if (newTab) {
-    const newItemEnum = tabItems.length + 1;
-    var tabContainer = document.getElementById("tabs-container");
-    const tabBlocksContainer = document.getElementById("tab-blocks-container");
-    var blockDiv = createTabblock(newItemEnum);
-    tabBlocksContainer.appendChild(blockDiv);
-
-    const tab = createTabButton(newItemEnum);
-    tabContainer.appendChild(tab);
-
-    handleClickTab(tab);
-  }
+   const containers = getContainersTabElements();
+   const lastIndexTabs = getLastIndexChildOfParent(containers.tabs);
+   const lastIndexTabBlocks = getLastIndexChildOfParent(containers.blocks);
+   const indexIdLastElement = extractIdIndex(containers.tabs.children[lastIndexTabs].id, 1);
+   var newIndex = Number(indexIdLastElement) + 1;
+   const newTab = containers.tabs.children[lastIndexTabs].cloneNode(true);
+   const newBlock = containers.blocks.children[lastIndexTabBlocks].cloneNode(true);
+   addAttributesToNewTabElements(newTab, newBlock, newIndex);
+   addTextNewTab(newTab, newBlock);
+   addChildToElement(containers.blocks, newBlock);
+   addChildToElement(containers.tabs, newTab);
+   handleClickTab(newTab);
 }
 
-function editActiveTab() {
-  const activeTab = getDomElements(".active-tab");
-  const activeBlock = getDomElements(".active-tab-block");
-  activeBlock[0].children[0].setAttribute("contenteditable", "true");
-  activeBlock[0].children[1].children[0].setAttribute(
-    "contenteditable",
-    "true"
-  );
-  activeBlock[0].children[1].children[1].setAttribute(
-    "contenteditable",
-    "true"
-  );
-  activeTab[0].setAttribute("contenteditable", "true");
+function deleteActiveTab() {
+   const activeElements = getActiveTabElements();
+   const containers = getContainersTabElements();
+   const lastChildIndexTab = getLastIndexChildOfParent(containers.tabs);
+   if (lastChildIndexTab > 0) {
+      const availableSibling = findAvailablesiblingElement(activeElements.tab);
+      handleClickTab(availableSibling);
+      removeChildFromElement(containers.tabs, activeElements.tab);
+      removeChildFromElement(containers.blocks, activeElements.block);
+   }
 }
 
-function saveEditsActiveTab() {
-  const activeTab = getDomElements(".active-tab");
-  const activeBlock = getDomElements(".active-tab-block");
-  activeBlock[0].children[0].setAttribute("contenteditable", "false");
-  activeBlock[0].children[1].children[0].setAttribute(
-    "contenteditable",
-    "false"
-  );
-  activeBlock[0].children[1].children[1].setAttribute(
-    "contenteditable",
-    "false"
-  );
-  activeTab[0].setAttribute("contenteditable", "false");
+function editActiveTab(element) {
+   const activeElements = getActiveTabElements();
+   addAttributeElement(activeElements.tab.children[0], "contentEditable", "true");
+   addAttributeElement(activeElements.block.children[0], "contentEditable", "true");
+   removeAttributeElement(activeElements.block.children[1], "readonly");
+   addClassToElement(element, "disabled-setting-item");
+   addClassToElement(element.parentElement.children[0], "disabled-setting-item");
+   addClassToElement(element.parentElement.children[1], "disabled-setting-item");
+   removeClassFromElement(element.nextElementSibling, "disabled-setting-item");
+   removeClickHandlerTabs();
 }
+
+function saveEditsActiveTab(element) {
+   const activeElements = getActiveTabElements();
+   addAttributeElement(activeElements.tab.children[0], "contentEditable", "false");
+   addAttributeElement(activeElements.block.children[0], "contentEditable", "false");
+   addAttributeElement(activeElements.block.children[1], "readonly", "readonly");
+   addClassToElement(element, "disabled-setting-item");
+   removeClassFromElement(element.parentElement.children[0], "disabled-setting-item");
+   removeClassFromElement(element.parentElement.children[1], "disabled-setting-item");
+   removeClassFromElement(element.previousElementSibling, "disabled-setting-item");
+   addClickHandlerTabs();
+}
+
+function checkTabsContainerOverflow(element) {
+   const isOverflow = checkOverflowElement(element);
+   const offSet = findLeftOffSet(element);
+   if (isOverflow && offSet != 0) {
+      addClassToElement(element, "tabs-container-overflow");
+      findPositionOverflowRightElement(element, "--position-right-fade");
+   } else {
+      removeClassFromElement(element, "tabs-container-overflow");
+   }
+}
+
 //---- Functions----- /
-
-function createTabblock(newItemEnum) {
-  console.log("create Tab Block");
-  const blockDiv = document.createElement("div");
-  const blockTitle = createTitle();
-  const blockTextContainer = createTextContainer();
-  blockDiv.appendChild(blockTitle);
-  blockDiv.appendChild(blockTextContainer);
-  addAttributeElement(blockDiv, "class", "tab-blocks-item");
-  addAttributeElement(blockDiv, "id", `tab-block-${newItemEnum}`);
-  return blockDiv;
+function removeClickHandlerTabs() {
+   const tabs = document.querySelectorAll(".tab-item");
+   tabs.forEach((e) => {
+      removeClickHandlerElement(e);
+   });
 }
 
-function createTitle() {
-  console.log("create Title block");
-  const blockTitle = document.createElement("h2");
-  const titleTxt = document.createTextNode("New Title here");
-  blockTitle.appendChild(titleTxt);
-  addAttributeElement(blockTitle, "class", "tab-blocks-item_title");
-  return blockTitle;
+function addClickHandlerTabs() {
+   const tabs = document.querySelectorAll(".tab-item");
+   tabs.forEach((e) => {
+      addClickHandlerElement(e, handleClickTab);
+   });
 }
 
-function createTextContainer() {
-  console.log("create Title block");
-  const blockTextContainer = document.createElement("div");
-  const blockTxtPar = createTextPar();
-  const blockTxtPar2 = createTextPar();
-  blockTextContainer.appendChild(blockTxtPar);
-  blockTextContainer.appendChild(blockTxtPar2);
-  addAttributeElement(blockTextContainer, "class", "tab-blocs_text");
-  return blockTextContainer;
+function removeClickHandlerElement(element) {
+   element.onclick = () => {
+      return false;
+   };
 }
 
-function createTextPar() {
-  console.log("create Title block");
-  const blockTxtPar = document.createElement("p");
-  const parTxt = document.createTextNode(
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque omnis perferendis tempore nulla molestiae totam veritatis possimus aliquid provident rem neque optio dolorum, fugiat esse minima, asperiores quas quia facilis."
-  );
-  blockTxtPar.appendChild(parTxt);
-  addAttributeElement(blockTxtPar, "class", "tab-blocks_text-item");
-  return blockTxtPar;
+function addClickHandlerElement(element, clickOperation) {
+   element.onclick = () => {
+      clickOperation(element);
+   };
 }
 
-function createTabButton(newItemEnum) {
-  const tab = document.createElement("button");
-  const btnTxt = document.createTextNode("New Tab Name");
-  tab.appendChild(btnTxt);
-  addAttributeElement(tab, "class", `tab-item`);
-  addAttributeElement(tab, "id", `tab-${newItemEnum}`);
-  addEventListenerNewTab(tab);
-  return tab;
+function findPositionOverflowRightElement(element, variableName) {
+   const position = -element.scrollLeft + "px";
+   generateDomVariableCSSInject(variableName, position);
 }
 
-function addEventListenerNewTab(tab) {
-  tab.addEventListener("click", (e) => {
-    handleClickTab(e.target);
-  });
+function generateDomVariableCSSInject(variableName, value) {
+   document.documentElement.style.setProperty(variableName, value);
 }
 
-function checkFiveMaximumLimit(list) {
-  return list.length + 1 <= 5;
+function findLeftOffSet(element) {
+   return element.clientWidth - (element.scrollWidth - element.scrollLeft);
 }
+
+function checkOverflowElement(element) {
+   return element.clientWidth < element.scrollWidth;
+}
+
+function findAvailablesiblingElement(element) {
+   var sibling = element.previousElementSibling;
+   sibling ? sibling : (sibling = element.nextElementSibling);
+   return sibling;
+}
+
+function addAttributesToNewTabElements(newTab, newBlock, newIndex) {
+   addAttributeElement(newTab, "class", "tab-item");
+   addAttributeElement(newTab, "id", `tab-${newIndex}`);
+   addAttributeElement(newBlock, "class", "tab-blocks-item");
+   addAttributeElement(newBlock, "id", `tab-block-${newIndex}`);
+}
+
+function addTextNewTab(newTab, newBlock) {
+   changeTextToElements(newTab.children[0], "New Tab");
+   changeTextToElements(newBlock.children[0], "New Tab Title");
+   changeTextToElements(newBlock.children[1], "New Tab Text Please entre what you wish!!");
+}
+
+function getLastIndexChildOfParent(parent) {
+   return parent.children.length - 1;
+}
+
+function getActiveTabElements() {
+   const tab = document.querySelector(".active-tab");
+   const block = document.querySelector(".active-tab-block");
+   return { tab: tab, block: block };
+}
+
+function getContainersTabElements() {
+   const tabs = document.querySelector(".tabs-container");
+   const blocks = document.querySelector(".tab-blocks-container");
+   return { tabs: tabs, blocks: blocks };
+}
+
+function addClassToElement(element, className) {
+   element.classList.add(className);
+}
+
+function removeClassFromElement(element, className) {
+   element.classList.remove(className);
+}
+
 function getDomElements(type) {
-  var elements = document.querySelectorAll(type);
-  return elements;
+   var elements = document.querySelectorAll(type);
+   return elements;
+}
+
+function scrollSmoothIntoViewelement(element) {
+   element.scrollIntoView({ behavior: "smooth" });
+}
+
+function extractIdIndex(id, i) {
+   return id.split("-")[i];
 }
 
 function addAttributeElement(element, type, string) {
-  element.setAttribute(type, string);
+   element.setAttribute(type, string);
 }
 
-function idNumber(id, i) {
-  return id.split("-")[i];
+function removeAttributeElement(element, type) {
+   element.removeAttribute(type);
+}
+
+function addChildToElement(element, child) {
+   element.appendChild(child);
+}
+
+function removeChildFromElement(element, child) {
+   element.removeChild(child);
+}
+
+function changeTextToElements(element, txt) {
+   element.innerText = txt;
 }
