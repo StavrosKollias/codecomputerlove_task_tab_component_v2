@@ -11,7 +11,8 @@
 
 /*------- Variables --------*/
 .tab-item {
-   --tab-item_width: 160px;
+   --tab-item_width: auto;
+   --tab-item_min-width: 160px;
    --tab-item_height: 58px;
    --tab-item_padding: 10px 10px;
    --tab-item_border-top: 3px;
@@ -81,6 +82,7 @@
    --add-tab-btn-item_rotate-after: -90deg;
 }
 
+/* General Prefixes */
 body {
    margin: 0;
    background-color: var(--lightGray);
@@ -125,7 +127,7 @@ textarea:focus {
 .tab-item {
    font-weight: bold;
    width: var(--tab-item_width);
-   min-width: var(--tab-item_width);
+   min-width: var(--tab-item_min-width);
    height: var(--tab-item_height);
    border: none;
    margin-right: var(--tab-item_margin-right);
