@@ -1,7 +1,7 @@
 :root {
    --white: #ffffff;
    --greenBlue: #0a746b;
-   --blueNavy: #30309e;
+   --blueNavy: #29295f;
    --lightGray: #e9e6e6;
    --mediumGray: #cccaca;
    --green: #2c862c;
@@ -83,7 +83,6 @@
 
 body {
    margin: 0;
-   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
    background-color: var(--lightGray);
    display: flex;
    flex-direction: column;
@@ -92,13 +91,13 @@ body {
    height: 100vh;
 }
 
-button:focus,
 textarea:focus {
    outline: none;
 }
 
 /*------- Element Classes --------*/
 .tab-component {
+   font-family: Arial, Helvetica, sans-serif;
    position: relative;
    height: auto;
    width: var(--tab-component_width);
@@ -124,6 +123,7 @@ textarea:focus {
 }
 
 .tab-item {
+   font-weight: bold;
    width: var(--tab-item_width);
    min-width: var(--tab-item_width);
    height: var(--tab-item_height);
