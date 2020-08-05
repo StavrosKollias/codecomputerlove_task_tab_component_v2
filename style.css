@@ -11,58 +11,60 @@
   --tabComponent_max-width: 994px;
 
   --tabItem_width: auto;
-  --tabItem_min-width: 160px;
-  --tabItem_height: 58px;
-  --tabItem_padding: 10px 10px;
-  --tabItem_border-top: 3px;
-  --tabItem_margin-right: 1px;
+  --tabItem_min-width: 10rem;
+  --tabItem_height: 3.7rem;
+  --tabItem_padding: 0.7rem 0.7rem;
+  --tabItem_border-top: 0.2rem;
+  --tabItem_margin-right: 0.07rem;
 
   --tabBlocksContainer_width: 100%;
-  --tabBlocksContainer_max-width: 994px;
+  --tabBlocksContainer_max-width: 62.125rem;
 
-  --tabBlocksItem_padding: 40px;
+  --tabBlocksItem_padding: 2.5rem;
   --tabBlocksItem_height: auto;
-  --tabBlocksItem_min-height: 273px;
-  --tabBlocksItem_max-width: 994px;
+  --tabBlocksItem_min-height: 17rem;
+  --tabBlocksItem_max-width: 62.125rem;
   --tabBlocksItem_width: 100%;
-  --tabBlocksItem_title-font: 22px;
-  --tabBlocksItem_text-font: 16px;
-  --tabBlocksItem_text_min-height: 134px;
+  --tabBlocksItem_title-font: 1.4rem;
+  --tabBlocksItem_text-font: 1rem;
+  --tabBlocksItem_text_min-height: 8.5rem;
 
   --tabSettingsTab_right: 0;
   --tabSettingsTab_top: 0;
   --tabSettingsTab_height: auto;
-  --tabSettingsTab_width: 50px;
+  --tabSettingsTab_width: 3.1rem;
   --tabSettingsTab_z-index: 2;
 
-  --tabSettingItem_width: 30px;
-  --tabSettingItem_height: 30px;
-  --tabSettingItem_margin: 2px auto;
+  --tabSettingItem_width: 1.9rem;
+  --tabSettingItem_height: 1.9rem;
+  --tabSettingItem_margin: 0.15 auto;
   --tabSettingItem_z-index: 1;
-  --tabSettingItem_border-radius: 20px;
+  --tabSettingItem_border-radius: 1.25rem;
   --tabSettingItem_transition-time: 0.25s;
   --tabSettingItem_item_width: 15px;
-  --tabSettingItem_item_height: 3px;
+  --tabSettingItem_item_height: 0.18rem;
   --tabSettingItem_item_top: 50%;
   --tabSettingItem_item_left: 50%;
   --tabSettingItem_item_translate: -50%;
   --tabSettingItem_item_rotate-after: -90deg;
 
-  --settingItem_width: 15px;
-  --settingItem_height: 3px;
+  --settingItem_width: 0.9rem;
+  --settingItem_height: 0.18rem;
   --settingItem_top: 50%;
   --settingItem_left: 50%;
   --settingItem_translate: -50%;
 
-  --addTabBtnItem_width: 12px;
-  --addTabBtnItem_height: 3px;
+  --addTabBtnItem_width: 0.75rem;
+  --addTabBtnItem_height: 0.18rem;
   --addTabBtnItem_top: 50%;
   --addTabBtnItem_left: 50%;
   --addTabBtnItem_translate: -50%;
   --addTabBtnItem_rotate-after: -90deg;
 }
 
-/*------- Variables --------*/
+html {
+  font-size: 16px;
+}
 
 /* General Prefixes */
 body {
