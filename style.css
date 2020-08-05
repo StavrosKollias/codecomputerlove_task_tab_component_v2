@@ -1,4 +1,5 @@
 :root {
+  --component_font: 16px;
   --white: #ffffff;
   --greenBlue: #0a746b;
   --blueNavy: #1f1f3f;
@@ -8,7 +9,7 @@
   --black: #000000;
   --red: #a33e3e;
   --tabComponent_width: 90%;
-  --tabComponent_max-width: 994px;
+  --tabComponent_max-width: 62.125rem;
 
   --tabItem_width: auto;
   --tabItem_min-width: 10rem;
@@ -37,11 +38,11 @@
 
   --tabSettingItem_width: 1.9rem;
   --tabSettingItem_height: 1.9rem;
-  --tabSettingItem_margin: 0.15 auto;
+  --tabSettingItem_margin: auto;
   --tabSettingItem_z-index: 1;
   --tabSettingItem_border-radius: 1.25rem;
   --tabSettingItem_transition-time: 0.25s;
-  --tabSettingItem_item_width: 15px;
+  --tabSettingItem_item_width: 0.9rem;
   --tabSettingItem_item_height: 0.18rem;
   --tabSettingItem_item_top: 50%;
   --tabSettingItem_item_left: 50%;
@@ -63,7 +64,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: var(--component_font);
 }
 
 /* General Prefixes */
@@ -102,11 +103,11 @@ textarea:focus {
 .tabs-container-overflow::after {
   content: "";
   position: absolute;
-  width: 30px;
+  width: 1.9rem;
   height: 100%;
   right: var(--position-right-fade);
   z-index: 1;
-  box-shadow: inset -38px 0 25px -30px var(--white);
+  box-shadow: inset -2.37rem 0 1.5rem -1.9rem var(--white);
 }
 
 .tab-item {
@@ -295,7 +296,7 @@ textarea:focus {
 .edit-tab-btn:hover,
 .add-tab-btn:hover {
   cursor: pointer;
-  box-shadow: 0 0 3px var(--black);
+  box-shadow: 0 0 0.18rem var(--black);
 }
 
 .disabled-setting-item {
