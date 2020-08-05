@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-      <title>Tab Challenge</title>
-      <link rel="stylesheet" href="style.css" />
-   </head>
-   <body>
-      <div class="tab-component">
-         <div class="tabs-container" id="tabs-container" onscroll="checkTabsContainerOverflow(this)">
-            <button class="tab-item active-tab" id="tab-1" onclick="handleClickTab(this);">
-               <span>Lorem Ipsum</span>
-            </button>
-            <button class="tab-item" id="tab-2" onclick="handleClickTab(this);">
-               <span> Viverra met</span>
-            </button>
-            <button class="tab-item" id="tab-3" onclick="handleClickTab(this);">
-               <span> Pellentesque</span>
-            </button>
-         </div>
-         <div class="tab-blocks-container" id="tab-blocks-container">
-            <div class="tab-settings-tab">
-               <button class="tab-setting-item add-tab-btn" onclick="addNewTab()">
-                  <div class="add-tab-btn-item"></div>
-               </button>
-
-               <button class="tab-setting-item delete-tab-btn" onclick="deleteActiveTab()">
-                  <i class="fa fa-minus setting-item"></i>
-               </button>
-
-               <button class="tab-setting-item edit-tab-btn" onclick="editActiveTab(this)">
-                  <i class="fa fa-pencil setting-item"></i>
-               </button>
-
-               <button class="tab-setting-item save-tab-btn disabled-setting-item" onclick="saveEditsActiveTab(this)">
-                  <i class="fa fa-floppy-o setting-item"></i>
-               </button>
-            </div>
-
-            <div class="tab-blocks-item active-tab-block" id="tab-block-1">
-               <h2 class="tab-blocks-item_title">Title 1</h2>
-
-               <textarea class="tab-blocks-item_text" oninput="handleTextAreaHeight(this)" readonly="readonly">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?</textarea
-               >
-            </div>
-            <div class="tab-blocks-item" id="tab-block-2">
-               <h2 class="tab-blocks-item_title">Title 2</h2>
-               <textarea class="tab-blocks-item_text" oninput="handleTextAreaHeight(this)" readonly="readonly">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?</textarea
-               >
-            </div>
-            <div class="tab-blocks-item" id="tab-block-3">
-               <h2 class="tab-blocks-item_title">Title 3</h2>
-               <textarea class="tab-blocks-item_text" oninput="handleTextAreaHeight(this)" readonly="readonly">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?</textarea
-               >
-            </div>
-         </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Tab Component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tab-component">
+      <div
+        class="tabs-container"
+        id="tabs-container"
+        onscroll="checkTabsContainerOverflow(this)"
+      >
+        <button
+          class="tab-item active-tab"
+          id="tab-1"
+          onclick="handleClickTab(this);"
+        >
+          <span>Lorem Ipsum</span>
+        </button>
+        <button class="tab-item" id="tab-2" onclick="handleClickTab(this);">
+          <span> Viverra met</span>
+        </button>
+        <button class="tab-item" id="tab-3" onclick="handleClickTab(this);">
+          <span> Pellentesque</span>
+        </button>
       </div>
-   </body>
-   <script src="tabs.js"></script>
+      <div class="tab-blocks-container" id="tab-blocks-container">
+        <div class="tab-settings-tab">
+          <button class="tab-setting-item add-tab-btn" onclick="addNewTab()">
+            <div class="add-tab-btn-item"></div>
+          </button>
+
+          <button
+            class="tab-setting-item delete-tab-btn"
+            onclick="deleteActiveTab()"
+          >
+            <i class="fa fa-minus setting-item"></i>
+          </button>
+
+          <button
+            class="tab-setting-item edit-tab-btn"
+            onclick="editActiveTab(this)"
+          >
+            <i class="fa fa-pencil setting-item"></i>
+          </button>
+
+          <button
+            class="tab-setting-item save-tab-btn disabled-setting-item"
+            onclick="saveEditsActiveTab(this)"
+          >
+            <i class="fa fa-floppy-o setting-item"></i>
+          </button>
+        </div>
+
+        <div class="tab-blocks-item active-tab-block" id="tab-block-1">
+          <h2 class="tab-blocks-item_title">Title 1</h2>
+
+          <textarea
+            class="tab-blocks-item_text"
+            oninput="handleTextAreaHeight(this)"
+            readonly="readonly"
+          >
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?</textarea
+          >
+        </div>
+        <div class="tab-blocks-item" id="tab-block-2">
+          <h2 class="tab-blocks-item_title">Title 2</h2>
+          <textarea
+            class="tab-blocks-item_text"
+            oninput="handleTextAreaHeight(this)"
+            readonly="readonly"
+          >
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?</textarea
+          >
+        </div>
+        <div class="tab-blocks-item" id="tab-block-3">
+          <h2 class="tab-blocks-item_title">Title 3</h2>
+          <textarea
+            class="tab-blocks-item_text"
+            oninput="handleTextAreaHeight(this)"
+            readonly="readonly"
+          >
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae officiis consequuntur soluta labore eum quisquam, fuga praesentium, possimus voluptates pariatur quod. Libero a reprehenderit nobis eius assumenda fuga unde iusto?</textarea
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="tabs.js"></script>
 </html>
